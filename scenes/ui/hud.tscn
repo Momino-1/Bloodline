@@ -1,7 +1,9 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://d36vlb1p5iijm"]
 
-[ext_resource type="Script" path="res://scripts/ui/hud.gd" id="1_s"]
-[ext_resource type="Theme" path="res://assets/ui/bloodline_theme.tres" id="2_theme"]
+[ext_resource type="Script" uid="uid://31haslebj254" path="res://scripts/ui/hud.gd" id="1_s"]
+[ext_resource type="Theme" uid="uid://cqvbksc0brmtt" path="res://assets/ui/bloodline_theme.tres" id="2_theme"]
+[ext_resource type="Texture2D" uid="uid://bbq2ciqhw7dfx" path="res://assets/textures/matao o algo.png" id="3_bo48s"]
+[ext_resource type="AudioStream" uid="uid://hp4py3tr1gba" path="res://assets/audio/SFX/Underwater Sound Effects Library.mp3" id="4_8qguk"]
 
 [sub_resource type="StyleBoxFlat" id="o2_bg"]
 bg_color = Color(0.1, 0.04, 0.06, 1)
@@ -17,12 +19,24 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[node name="HUD" type="CanvasLayer"]
+[node name="HUD" type="CanvasLayer" unique_id=69295616]
 process_mode = 3
 layer = 5
 script = ExtResource("1_s")
 
-[node name="Root" type="Control" parent="."]
+[node name="Toasts" type="VBoxContainer" parent="." unique_id=1201340250]
+unique_name_in_owner = true
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -152.0
+offset_bottom = -152.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="Root" type="Control" parent="." unique_id=1835813694]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -32,55 +46,50 @@ grow_vertical = 2
 mouse_filter = 2
 theme = ExtResource("2_theme")
 
-[node name="TopLeft" type="PanelContainer" parent="Root"]
+[node name="TopLeft" type="PanelContainer" parent="Root" unique_id=1697113978]
 layout_mode = 1
 offset_left = 20.0
 offset_top = 20.0
 offset_right = 20.0
 offset_bottom = 20.0
-grow_horizontal = 1
-grow_vertical = 1
 mouse_filter = 2
 
-[node name="VBox" type="VBoxContainer" parent="Root/TopLeft"]
+[node name="VBox" type="VBoxContainer" parent="Root/TopLeft" unique_id=236254038]
 layout_mode = 2
 
-[node name="LocationTitle" type="Label" parent="Root/TopLeft/VBox"]
+[node name="LocationTitle" type="Label" parent="Root/TopLeft/VBox" unique_id=2109034210]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.7, 0.64, 0.68, 1.0)
+theme_override_colors/font_color = Color(0.7, 0.64, 0.68, 1)
 theme_override_font_sizes/font_size = 12
-text = "LOCATION"
+text = "LOCATION rn:"
 
-[node name="Location" type="Label" parent="Root/TopLeft/VBox"]
+[node name="Location" type="Label" parent="Root/TopLeft/VBox" unique_id=1783481803]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_colors/font_color = Color(0.5, 0.85, 1.0, 1.0)
+theme_override_colors/font_color = Color(0.5, 0.85, 1, 1)
 theme_override_font_sizes/font_size = 22
-text = ""
 
-[node name="ObjectiveTitle" type="Label" parent="Root/TopLeft/VBox"]
+[node name="ObjectiveTitle" type="Label" parent="Root/TopLeft/VBox" unique_id=782646123]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.7, 0.64, 0.68, 1.0)
+theme_override_colors/font_color = Color(0.7, 0.64, 0.68, 1)
 theme_override_font_sizes/font_size = 12
 text = "OBJECTIVE"
 
-[node name="Objective" type="Label" parent="Root/TopLeft/VBox"]
+[node name="Objective" type="Label" parent="Root/TopLeft/VBox" unique_id=2004464727]
 unique_name_in_owner = true
-layout_mode = 2
 custom_minimum_size = Vector2(380, 0)
-autowrap_mode = 3
-theme_override_colors/font_color = Color(0.93, 0.9, 0.92, 1.0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.93, 0.9, 0.92, 1)
 theme_override_font_sizes/font_size = 17
-text = ""
+autowrap_mode = 3
 
-[node name="Discoveries" type="Label" parent="Root/TopLeft/VBox"]
+[node name="Discoveries" type="Label" parent="Root/TopLeft/VBox" unique_id=1911508304]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_colors/font_color = Color(0.7, 0.64, 0.68, 1.0)
+theme_override_colors/font_color = Color(0.7, 0.64, 0.68, 1)
 theme_override_font_sizes/font_size = 15
-text = ""
 
-[node name="TopRight" type="PanelContainer" parent="Root"]
+[node name="TopRight" type="PanelContainer" parent="Root" unique_id=1570518368]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -90,16 +99,17 @@ offset_top = 20.0
 offset_right = -20.0
 offset_bottom = 20.0
 grow_horizontal = 0
-grow_vertical = 1
 mouse_filter = 2
 
-[node name="Controls" type="Label" parent="Root/TopRight"]
+[node name="Controls" type="Label" parent="Root/TopRight" unique_id=608609391]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.7, 0.64, 0.68, 1.0)
+theme_override_colors/font_color = Color(0.7, 0.64, 0.68, 1)
 theme_override_font_sizes/font_size = 13
-text = "WASD move  ·  Mouse look\nSpace / Ctrl up, down  ·  Shift boost\nE interact  ·  Tab encyclopedia  ·  Esc pause"
+text = "WASD move /  Mouse look
+Space / Ctrl up, down  /  Shift boost
+E interact  /  Tab encyclopedia  /  Esc pause"
 
-[node name="BottomLeft" type="PanelContainer" parent="Root"]
+[node name="BottomLeft" type="PanelContainer" parent="Root" unique_id=1010932059]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -108,64 +118,65 @@ offset_left = 20.0
 offset_top = -20.0
 offset_right = 20.0
 offset_bottom = -20.0
-grow_horizontal = 1
 grow_vertical = 0
 mouse_filter = 2
 
-[node name="VBox" type="VBoxContainer" parent="Root/BottomLeft"]
+[node name="VBox" type="VBoxContainer" parent="Root/BottomLeft" unique_id=856228676]
 layout_mode = 2
 
-[node name="OxygenTitle" type="Label" parent="Root/BottomLeft/VBox"]
+[node name="OxygenTitle" type="Label" parent="Root/BottomLeft/VBox" unique_id=1944555810]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.7, 0.64, 0.68, 1.0)
+theme_override_colors/font_color = Color(0.7, 0.64, 0.68, 1)
 theme_override_font_sizes/font_size = 12
-text = "OXYGEN CAPACITY"
+text = "OXYGEN CAPACITY O ALGO"
 
-[node name="OxygenBar" type="ProgressBar" parent="Root/BottomLeft/VBox"]
+[node name="OxygenBar" type="ProgressBar" parent="Root/BottomLeft/VBox" unique_id=1278718251]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(320, 22)
 layout_mode = 2
 theme_override_styles/background = SubResource("o2_bg")
 theme_override_styles/fill = SubResource("o2_fill")
-max_value = 100.0
 show_percentage = false
 
-[node name="OxygenLabel" type="Label" parent="Root/BottomLeft/VBox"]
+[node name="OxygenLabel" type="Label" parent="Root/BottomLeft/VBox" unique_id=1944692106]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_colors/font_color = Color(0.93, 0.9, 0.92, 1.0)
+theme_override_colors/font_color = Color(0.93, 0.9, 0.92, 1)
 theme_override_font_sizes/font_size = 15
-text = ""
 
-[node name="PromptPanel" type="PanelContainer" parent="Root"]
+[node name="TextureRect" type="TextureRect" parent="Root/BottomLeft/VBox/OxygenLabel" unique_id=1476259422]
+light_mask = 0
+layout_mode = 0
+offset_left = 352.0
+offset_top = -55.0
+offset_right = 672.0
+offset_bottom = 225.0
+scale = Vector2(0.27577034, 0.32418534)
+texture = ExtResource("3_bo48s")
+expand_mode = 5
+
+[node name="PromptPanel" type="PanelContainer" parent="Root" unique_id=822797005]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_top = -90.0
-offset_bottom = -90.0
+offset_left = -22.0
+offset_top = -308.0
+offset_right = 23.0
+offset_bottom = -236.0
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 2
 
-[node name="Prompt" type="Label" parent="Root/PromptPanel"]
+[node name="Prompt" type="Label" parent="Root/PromptPanel" unique_id=101183069]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_colors/font_color = Color(0.5, 0.85, 1.0, 1.0)
+theme_override_colors/font_color = Color(0.5, 0.85, 1, 1)
 theme_override_font_sizes/font_size = 20
-text = ""
 
-[node name="Toasts" type="VBoxContainer" parent="Root"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_top = 24.0
-offset_bottom = 24.0
-grow_horizontal = 2
-mouse_filter = 2
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1450132192]
+stream = ExtResource("4_8qguk")
+autoplay = true

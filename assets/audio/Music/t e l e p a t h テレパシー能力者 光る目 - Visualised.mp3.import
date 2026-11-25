@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cw1hbk4foip0r"
+path="res://.godot/imported/t e l e p a t h テレパシー能力者 光る目 - Visualised.mp3-7930761a92ae653f92783627b5613604.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Music/t e l e p a t h テレパシー能力者 光る目 - Visualised.mp3"
+dest_files=["res://.godot/imported/t e l e p a t h テレパシー能力者 光る目 - Visualised.mp3-7930761a92ae653f92783627b5613604.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

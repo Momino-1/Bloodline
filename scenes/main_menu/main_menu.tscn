@@ -1,11 +1,14 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://bjrdyihpp4y5q"]
 
-[ext_resource type="Script" path="res://scripts/ui/main_menu.gd" id="1_s"]
-[ext_resource type="Theme" path="res://assets/ui/bloodline_theme.tres" id="2_theme"]
+[ext_resource type="Script" uid="uid://dsronsa7tlayv" path="res://scripts/ui/main_menu.gd" id="1_s"]
+[ext_resource type="Theme" uid="uid://cqvbksc0brmtt" path="res://assets/ui/bloodline_theme.tres" id="2_theme"]
 [ext_resource type="PackedScene" path="res://scenes/main_menu/menu_background.tscn" id="3_bg"]
 [ext_resource type="PackedScene" path="res://scenes/ui/encyclopedia.tscn" id="4_enc"]
+[ext_resource type="Texture2D" uid="uid://18rsj77yg8v0" path="res://assets/textures/Untitled(1).png" id="4_wem23"]
+[ext_resource type="FontFile" uid="uid://bvm3jhybnq1jh" path="res://assets/Fonts/Neuropol.otf" id="5_3ovsr"]
+[ext_resource type="AudioStream" uid="uid://cw1hbk4foip0r" path="res://assets/audio/Music/t e l e p a t h テレパシー能力者 光る目 - Visualised.mp3" id="7_5seab"]
 
-[node name="MainMenu" type="Control"]
+[node name="MainMenu" type="Control" unique_id=996919572]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,76 +18,81 @@ grow_vertical = 2
 theme = ExtResource("2_theme")
 script = ExtResource("1_s")
 
-[node name="MenuBackground" parent="." instance=ExtResource("3_bg")]
+[node name="MenuBackground" parent="." unique_id=1003939501 instance=ExtResource("3_bg")]
 layout_mode = 1
 
-[node name="Column" type="VBoxContainer" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1058082147]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 118.00001
+offset_right = 1312.0
+offset_bottom = 283.0
+scale = Vector2(0.4336741, 0.50890905)
+texture = ExtResource("4_wem23")
+
+[node name="Column" type="VBoxContainer" parent="." unique_id=1309695058]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 90.0
-offset_right = 90.0
+offset_left = 41.0
+offset_top = -168.0
+offset_right = 341.0
+offset_bottom = 193.0
 grow_vertical = 2
 theme_override_constants/separation = 12
 
-[node name="Tagline" type="Label" parent="Column"]
+[node name="Subtitle" type="Label" parent="Column" unique_id=51988494]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.5, 0.85, 1.0, 1.0)
-theme_override_font_sizes/font_size = 14
-text = "Full cricle"
-
-[node name="Title" type="Label" parent="Column"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.95, 0.2, 0.25, 1.0)
-theme_override_font_sizes/font_size = 78
-text = "BLOODLINE"
-
-[node name="Subtitle" type="Label" parent="Column"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.7, 0.64, 0.68, 1.0)
+theme_override_colors/font_color = Color(0.7, 0.64, 0.68, 1)
 theme_override_font_sizes/font_size = 16
-text = "Biology"
+text = "Lowkey the best Biology spil"
 
-[node name="Gap" type="Control" parent="Column"]
+[node name="Gap" type="Control" parent="Column" unique_id=128486872]
 custom_minimum_size = Vector2(0, 26)
 layout_mode = 2
 
-[node name="StartButton" type="Button" parent="Column"]
+[node name="StartButton" type="Button" parent="Column" unique_id=2285747]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 48)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("5_3ovsr")
 text = "Start game"
 
-[node name="ContinueButton" type="Button" parent="Column"]
+[node name="ContinueButton" type="Button" parent="Column" unique_id=333546087]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 48)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("5_3ovsr")
 text = "son"
 
-[node name="WikiButton" type="Button" parent="Column"]
+[node name="WikiButton" type="Button" parent="Column" unique_id=1065136448]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 48)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("5_3ovsr")
 text = "Biology Wiki"
 
-[node name="SettingsButton" type="Button" parent="Column"]
+[node name="SettingsButton" type="Button" parent="Column" unique_id=172098150]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 48)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("5_3ovsr")
 text = "Settings"
 
-[node name="ExitButton" type="Button" parent="Column"]
+[node name="ExitButton" type="Button" parent="Column" unique_id=2144785677]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 48)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("5_3ovsr")
 text = "Exit"
 
-[node name="Encyclopedia" parent="." instance=ExtResource("4_enc")]
+[node name="Encyclopedia" parent="." unique_id=155357677 instance=ExtResource("4_enc")]
 unique_name_in_owner = true
 layout_mode = 1
+anchors_preset = 0
 
-[node name="Settings" type="Control" parent="."]
+[node name="Settings" type="Control" parent="." unique_id=914575398]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
@@ -94,7 +102,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Dim" type="ColorRect" parent="Settings"]
+[node name="Dim" type="ColorRect" parent="Settings" unique_id=1251362755]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -103,7 +111,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.7)
 
-[node name="Center" type="CenterContainer" parent="Settings"]
+[node name="Center" type="CenterContainer" parent="Settings" unique_id=742938793]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -111,26 +119,26 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="PanelContainer" parent="Settings/Center"]
+[node name="Panel" type="PanelContainer" parent="Settings/Center" unique_id=609123151]
 layout_mode = 2
 
-[node name="VBox" type="VBoxContainer" parent="Settings/Center/Panel"]
+[node name="VBox" type="VBoxContainer" parent="Settings/Center/Panel" unique_id=2071708492]
 layout_mode = 2
 theme_override_constants/separation = 14
 
-[node name="Heading" type="Label" parent="Settings/Center/Panel/VBox"]
+[node name="Heading" type="Label" parent="Settings/Center/Panel/VBox" unique_id=1163855550]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.93, 0.9, 0.92, 1.0)
+theme_override_colors/font_color = Color(0.93, 0.9, 0.92, 1)
 theme_override_font_sizes/font_size = 26
 text = "SETTINGS"
 
-[node name="SensLabel" type="Label" parent="Settings/Center/Panel/VBox"]
+[node name="SensLabel" type="Label" parent="Settings/Center/Panel/VBox" unique_id=612786092]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.7, 0.64, 0.68, 1.0)
+theme_override_colors/font_color = Color(0.7, 0.64, 0.68, 1)
 theme_override_font_sizes/font_size = 16
 text = "Mouse sensitivity"
 
-[node name="SensSlider" type="HSlider" parent="Settings/Center/Panel/VBox"]
+[node name="SensSlider" type="HSlider" parent="Settings/Center/Panel/VBox" unique_id=834142822]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(360, 24)
 layout_mode = 2
@@ -139,30 +147,38 @@ max_value = 0.008
 step = 0.0001
 value = 0.0008
 
-[node name="VolLabel" type="Label" parent="Settings/Center/Panel/VBox"]
+[node name="VolLabel" type="Label" parent="Settings/Center/Panel/VBox" unique_id=839173205]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.7, 0.64, 0.68, 1.0)
+theme_override_colors/font_color = Color(0.7, 0.64, 0.68, 1)
 theme_override_font_sizes/font_size = 16
 text = "Master volume"
 
-[node name="VolSlider" type="HSlider" parent="Settings/Center/Panel/VBox"]
+[node name="VolSlider" type="HSlider" parent="Settings/Center/Panel/VBox" unique_id=604443864]
 unique_name_in_owner = true
 layout_mode = 2
 max_value = 1.0
 step = 0.01
 
-[node name="FullscreenCheck" type="CheckButton" parent="Settings/Center/Panel/VBox"]
+[node name="FullscreenCheck" type="CheckButton" parent="Settings/Center/Panel/VBox" unique_id=340138816]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Fullscreen"
 
-[node name="CloseButton" type="Button" parent="Settings/Center/Panel/VBox"]
+[node name="CloseButton" type="Button" parent="Settings/Center/Panel/VBox" unique_id=577823208]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 44)
 layout_mode = 2
 text = "Close"
 
-[node name="ConfirmDialog" type="ConfirmationDialog" parent="."]
+[node name="ConfirmDialog" type="ConfirmationDialog" parent="." unique_id=1531367418]
 unique_name_in_owner = true
+oversampling_override = 1.0
 title = "New game"
+position = Vector2i(400, 400)
+size = Vector2i(671, 100)
 dialog_text = "Starting a new game erases your saved progress and discoveries. Continue?"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=523086816]
+stream = ExtResource("7_5seab")
+autoplay = true
+parameters/looping = true

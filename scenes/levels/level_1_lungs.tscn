@@ -1,60 +1,60 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://kv276da5hqsl"]
 
-[ext_resource type="Script" path="res://scripts/gameplay/level_1.gd" id="1_s"]
-[ext_resource type="Script" path="res://scripts/gameplay/vessel_wall.gd" id="2_vessel"]
+[ext_resource type="Script" uid="uid://bjjrut4jim72k" path="res://scripts/gameplay/level_1.gd" id="1_s"]
+[ext_resource type="Script" uid="uid://dpb5xehblo46d" path="res://scripts/gameplay/vessel_wall.gd" id="2_vessel"]
 [ext_resource type="PackedScene" path="res://scenes/player/rbc_player.tscn" id="3_player"]
 [ext_resource type="PackedScene" path="res://scenes/interactables/alveolus.tscn" id="4_alv"]
 [ext_resource type="PackedScene" path="res://scenes/interactables/capillary_patch.tscn" id="5_cap"]
 [ext_resource type="PackedScene" path="res://scenes/interactables/red_blood_cell.tscn" id="6_rbc"]
+
 [sub_resource type="Environment" id="env"]
 background_mode = 1
-background_color = Color(0.05, 0.0, 0.02, 1.0)
+background_color = Color(0.05, 0, 0.02, 1)
 ambient_light_source = 2
-ambient_light_color = Color(0.45, 0.12, 0.18, 1.0)
+ambient_light_color = Color(0.45, 0.12, 0.18, 1)
 ambient_light_energy = 0.7
 tonemap_mode = 2
 glow_enabled = true
 glow_intensity = 0.9
 fog_enabled = true
-fog_light_color = Color(0.32, 0.04, 0.08, 1.0)
+fog_light_color = Color(0.32, 0.04, 0.08, 1)
 fog_density = 0.016
 
 [sub_resource type="FastNoiseLite" id="wall_noise"]
-frequency = 0.01
 
 [sub_resource type="NoiseTexture2D" id="wall_normal"]
 width = 500
 height = 500
+noise = SubResource("wall_noise")
 seamless = true
 as_normal_map = true
+seamless_blend_skirt = 0.481
 bump_strength = 100.0
-noise = SubResource("wall_noise")
 
 [sub_resource type="StandardMaterial3D" id="wall_mat"]
 cull_mode = 2
 vertex_color_use_as_albedo = true
-roughness = 0.4
+roughness = 0.44
 emission_enabled = true
-emission = Color(0.25, 0.02, 0.05, 1.0)
+emission = Color(0.25, 0.02, 0.05, 1)
 emission_energy_multiplier = 0.5
 normal_enabled = true
-normal_scale = 1.0
+normal_scale = -0.89
 normal_texture = SubResource("wall_normal")
-clearcoat_enabled = true
-clearcoat = 0.5
-clearcoat_roughness = 0.3
 rim_enabled = true
-rim = 0.35
-rim_tint = 0.5
+rim = 0.67
+clearcoat_enabled = true
+clearcoat = 0.66
+clearcoat_roughness = 0.73
 
 [sub_resource type="BoxShape3D" id="blocker_shape"]
 size = Vector3(40, 40, 4)
 
 [sub_resource type="StandardMaterial3D" id="exit_mat"]
-albedo_color = Color(0.4, 0.8, 1.0, 1.0)
+albedo_color = Color(0.4, 0.8, 1, 1)
 roughness = 0.3
 emission_enabled = true
-emission = Color(0.4, 0.8, 1.0, 1.0)
+emission = Color(0.4, 0.8, 1, 1)
 emission_energy_multiplier = 0.3
 
 [sub_resource type="TorusMesh" id="exit_mesh"]
@@ -64,201 +64,200 @@ outer_radius = 7.4
 [sub_resource type="BoxShape3D" id="exit_shape"]
 size = Vector3(20, 20, 1.5)
 
-[node name="Level1Lungs" type="Node3D"]
+[node name="Level1Lungs" type="Node3D" unique_id=685930238]
 script = ExtResource("1_s")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=390585333]
 environment = SubResource("env")
 
-[node name="Sun" type="DirectionalLight3D" parent="."]
-rotation = Vector3(-0.8727, 0.3491, 0)
-light_color = Color(1.0, 0.7, 0.7, 1.0)
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=1135569250]
+transform = Transform3D(0.93968093, -0.26203498, 0.21985766, 0, 0.6427605, 0.76606715, -0.34205222, -0.7198587, 0.6039898, 0, 0, 0)
+light_color = Color(1, 0.7, 0.7, 1)
 light_energy = 0.4
 
-[node name="VesselLights" type="Node3D" parent="."]
+[node name="VesselLights" type="Node3D" parent="." unique_id=432597869]
 
-[node name="Light0" type="OmniLight3D" parent="VesselLights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15.0)
-light_color = Color(1.0, 0.4, 0.45, 1.0)
+[node name="Light0" type="OmniLight3D" parent="VesselLights" unique_id=669973110]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15)
+light_color = Color(1, 0.4, 0.45, 1)
 light_energy = 1.2
 omni_range = 30.0
 
-[node name="Light1" type="OmniLight3D" parent="VesselLights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -43.0)
-light_color = Color(1.0, 0.4, 0.45, 1.0)
+[node name="Light1" type="OmniLight3D" parent="VesselLights" unique_id=1797176922]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -43)
+light_color = Color(1, 0.4, 0.45, 1)
 light_energy = 1.2
 omni_range = 30.0
 
-[node name="Light2" type="OmniLight3D" parent="VesselLights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -71.0)
-light_color = Color(1.0, 0.4, 0.45, 1.0)
+[node name="Light2" type="OmniLight3D" parent="VesselLights" unique_id=2006273956]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -71)
+light_color = Color(1, 0.4, 0.45, 1)
 light_energy = 1.2
 omni_range = 30.0
 
-[node name="Light3" type="OmniLight3D" parent="VesselLights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -99.0)
-light_color = Color(1.0, 0.4, 0.45, 1.0)
+[node name="Light3" type="OmniLight3D" parent="VesselLights" unique_id=1731304361]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -99)
+light_color = Color(1, 0.4, 0.45, 1)
 light_energy = 1.2
 omni_range = 30.0
 
-[node name="Light4" type="OmniLight3D" parent="VesselLights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -127.0)
-light_color = Color(1.0, 0.4, 0.45, 1.0)
+[node name="Light4" type="OmniLight3D" parent="VesselLights" unique_id=1317651944]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -127)
+light_color = Color(1, 0.4, 0.45, 1)
 light_energy = 1.2
 omni_range = 30.0
 
-[node name="Light5" type="OmniLight3D" parent="VesselLights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -155.0)
-light_color = Color(1.0, 0.4, 0.45, 1.0)
+[node name="Light5" type="OmniLight3D" parent="VesselLights" unique_id=2053353416]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -155)
+light_color = Color(1, 0.4, 0.45, 1)
 light_energy = 1.2
 omni_range = 30.0
 
-[node name="VesselWall" type="StaticBody3D" parent="."]
+[node name="VesselWall" type="StaticBody3D" parent="." unique_id=105365000]
 script = ExtResource("2_vessel")
 
-[node name="Mesh" type="MeshInstance3D" parent="VesselWall"]
+[node name="Mesh" type="MeshInstance3D" parent="VesselWall" unique_id=1739104061]
 material_override = SubResource("wall_mat")
 
-[node name="Shape" type="CollisionShape3D" parent="VesselWall"]
+[node name="Shape" type="CollisionShape3D" parent="VesselWall" unique_id=45967737]
 
-[node name="Blockers" type="Node3D" parent="."]
+[node name="Blockers" type="Node3D" parent="." unique_id=1790861080]
 
-[node name="BlockerStart" type="StaticBody3D" parent="Blockers"]
+[node name="BlockerStart" type="StaticBody3D" parent="Blockers" unique_id=563565025]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Blockers/BlockerStart"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Blockers/BlockerStart" unique_id=1161547869]
 shape = SubResource("blocker_shape")
 
-[node name="BlockerEnd" type="StaticBody3D" parent="Blockers"]
+[node name="BlockerEnd" type="StaticBody3D" parent="Blockers" unique_id=526780574]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -173)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Blockers/BlockerEnd"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Blockers/BlockerEnd" unique_id=1078673755]
 shape = SubResource("blocker_shape")
 
-[node name="Alveoli" type="Node3D" parent="."]
+[node name="Alveoli" type="Node3D" parent="." unique_id=860470818]
 
-[node name="Alveolus0" parent="Alveoli" instance=ExtResource("4_alv")]
-transform = Transform3D(0.9211, -0.3894, 0, 0.3894, 0.9211, 0, 0, 0, 1, 12.4343, 5.2571, -24.0)
+[node name="Alveolus0" parent="Alveoli" unique_id=245604503 instance=ExtResource("4_alv")]
+transform = Transform3D(0.9211, -0.3894, 0, 0.3894, 0.9211, 0, 0, 0, 1, 12.4343, 5.2571, -24)
 
-[node name="Alveolus1" parent="Alveoli" instance=ExtResource("4_alv")]
-transform = Transform3D(-0.9041, -0.4274, 0, 0.4274, -0.9041, 0, 0, 0, 1, -12.2050, 5.7696, -58.0)
+[node name="Alveolus1" parent="Alveoli" unique_id=1987640377 instance=ExtResource("4_alv")]
+transform = Transform3D(-0.9041, -0.4274, 0, 0.4274, -0.9041, 0, 0, 0, 1, -12.205, 5.7696, -58)
 
-[node name="Alveolus2" parent="Alveoli" instance=ExtResource("4_alv")]
-transform = Transform3D(-0.0124, 0.9999, 0, -0.9999, -0.0124, 0, 0, 0, 1, -0.1672, -13.4990, -92.0)
+[node name="Alveolus2" parent="Alveoli" unique_id=640517061 instance=ExtResource("4_alv")]
+transform = Transform3D(-0.0124, 0.9999, 0, -0.9999, -0.0124, 0, 0, 0, 1, -0.1672, -13.499, -92)
 
-[node name="Alveolus3" parent="Alveoli" instance=ExtResource("4_alv")]
-transform = Transform3D(0.2675, -0.9636, 0, 0.9636, 0.2675, 0, 0, 0, 1, 3.6112, 13.0080, -124.0)
+[node name="Alveolus3" parent="Alveoli" unique_id=1300572885 instance=ExtResource("4_alv")]
+transform = Transform3D(0.2675, -0.9636, 0, 0.9636, 0.2675, 0, 0, 0, 1, 3.6112, 13.008, -124)
 
-[node name="Alveolus4" parent="Alveoli" instance=ExtResource("4_alv")]
-transform = Transform3D(-0.7259, 0.6878, 0, -0.6878, -0.7259, 0, 0, 0, 1, -9.8001, -9.2848, -152.0)
+[node name="Alveolus4" parent="Alveoli" unique_id=1089987666 instance=ExtResource("4_alv")]
+transform = Transform3D(-0.7259, 0.6878, 0, -0.6878, -0.7259, 0, 0, 0, 1, -9.8001, -9.2848, -152)
 
-[node name="CapillaryPatches" type="Node3D" parent="."]
+[node name="CapillaryPatches" type="Node3D" parent="." unique_id=735458343]
 
-[node name="Patch0" parent="CapillaryPatches" instance=ExtResource("5_cap")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0523, 6.3110, -40.0)
+[node name="Patch0" parent="CapillaryPatches" unique_id=248965834 instance=ExtResource("5_cap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0523, 6.311, -40)
 
-[node name="Patch1" parent="CapillaryPatches" instance=ExtResource("5_cap")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.3608, -3.9738, -75.0)
+[node name="Patch1" parent="CapillaryPatches" unique_id=1796204260 instance=ExtResource("5_cap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.3608, -3.9738, -75)
 
-[node name="Patch2" parent="CapillaryPatches" instance=ExtResource("5_cap")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8167, -4.7345, -108.0)
+[node name="Patch2" parent="CapillaryPatches" unique_id=1076536403 instance=ExtResource("5_cap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8167, -4.7345, -108)
 
-[node name="Cells" type="Node3D" parent="."]
+[node name="Cells" type="Node3D" parent="." unique_id=1830176811]
 
-[node name="Cell0" parent="Cells" instance=ExtResource("6_rbc")]
+[node name="Cell0" parent="Cells" unique_id=1696366265 instance=ExtResource("6_rbc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3438, 0.6883, -117.0954)
 
-[node name="Cell1" parent="Cells" instance=ExtResource("6_rbc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4390, 2.6988, -94.1802)
+[node name="Cell1" parent="Cells" unique_id=432341639 instance=ExtResource("6_rbc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.439, 2.6988, -94.1802)
 
-[node name="Cell2" parent="Cells" instance=ExtResource("6_rbc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2831, 0.8500, -58.6180)
+[node name="Cell2" parent="Cells" unique_id=1062552109 instance=ExtResource("6_rbc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2831, 0.85, -58.618)
 
-[node name="Cell3" parent="Cells" instance=ExtResource("6_rbc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9441, 0.2020, -34.2922)
+[node name="Cell3" parent="Cells" unique_id=193955784 instance=ExtResource("6_rbc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9441, 0.202, -34.2922)
 
-[node name="Cell4" parent="Cells" instance=ExtResource("6_rbc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7854, 4.6040, -145.5316)
+[node name="Cell4" parent="Cells" unique_id=1009581278 instance=ExtResource("6_rbc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7854, 4.604, -145.5316)
 
-[node name="Cell5" parent="Cells" instance=ExtResource("6_rbc")]
+[node name="Cell5" parent="Cells" unique_id=1119188703 instance=ExtResource("6_rbc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6276, -4.9012, -76.3484)
 
-[node name="Cell6" parent="Cells" instance=ExtResource("6_rbc")]
+[node name="Cell6" parent="Cells" unique_id=1986949057 instance=ExtResource("6_rbc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6831, -3.3947, -25.5737)
 
-[node name="Cell7" parent="Cells" instance=ExtResource("6_rbc")]
+[node name="Cell7" parent="Cells" unique_id=2070412260 instance=ExtResource("6_rbc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6432, 2.5456, -147.5525)
 
-[node name="Cell8" parent="Cells" instance=ExtResource("6_rbc")]
+[node name="Cell8" parent="Cells" unique_id=1127132040 instance=ExtResource("6_rbc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8965, 3.2924, -102.2518)
 
-[node name="Cell9" parent="Cells" instance=ExtResource("6_rbc")]
+[node name="Cell9" parent="Cells" unique_id=163930789 instance=ExtResource("6_rbc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4268, -2.8035, -133.3024)
 
-[node name="Cell10" parent="Cells" instance=ExtResource("6_rbc")]
+[node name="Cell10" parent="Cells" unique_id=1389550198 instance=ExtResource("6_rbc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4874, -4.2156, -73.1158)
 
-[node name="Cell11" parent="Cells" instance=ExtResource("6_rbc")]
+[node name="Cell11" parent="Cells" unique_id=1781560252 instance=ExtResource("6_rbc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5789, 0.5273, -110.7893)
 
-[node name="Cell12" parent="Cells" instance=ExtResource("6_rbc")]
+[node name="Cell12" parent="Cells" unique_id=12649440 instance=ExtResource("6_rbc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9727, -1.7695, -88.4191)
 
-[node name="Cell13" parent="Cells" instance=ExtResource("6_rbc")]
+[node name="Cell13" parent="Cells" unique_id=35788324 instance=ExtResource("6_rbc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4303, -1.4288, -19.9396)
 
-[node name="Cell14" parent="Cells" instance=ExtResource("6_rbc")]
+[node name="Cell14" parent="Cells" unique_id=1648162374 instance=ExtResource("6_rbc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3027, 2.1225, -152.6498)
 
-[node name="Cell15" parent="Cells" instance=ExtResource("6_rbc")]
+[node name="Cell15" parent="Cells" unique_id=1880454270 instance=ExtResource("6_rbc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2926, 1.3888, -100.4674)
 
-[node name="Cell16" parent="Cells" instance=ExtResource("6_rbc")]
+[node name="Cell16" parent="Cells" unique_id=734967936 instance=ExtResource("6_rbc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0895, 0.3678, -47.5674)
 
-[node name="Cell17" parent="Cells" instance=ExtResource("6_rbc")]
+[node name="Cell17" parent="Cells" unique_id=1768156424 instance=ExtResource("6_rbc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3653, 2.8397, -92.1766)
 
-[node name="Cell18" parent="Cells" instance=ExtResource("6_rbc")]
+[node name="Cell18" parent="Cells" unique_id=1155423426 instance=ExtResource("6_rbc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8227, -0.0104, -132.1303)
 
-[node name="Cell19" parent="Cells" instance=ExtResource("6_rbc")]
+[node name="Cell19" parent="Cells" unique_id=900762362 instance=ExtResource("6_rbc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4055, -2.7804, -136.1571)
 
-[node name="Cell20" parent="Cells" instance=ExtResource("6_rbc")]
+[node name="Cell20" parent="Cells" unique_id=580693328 instance=ExtResource("6_rbc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0054, 0.0144, -109.4317)
 
-[node name="Cell21" parent="Cells" instance=ExtResource("6_rbc")]
+[node name="Cell21" parent="Cells" unique_id=1050582425 instance=ExtResource("6_rbc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7734, 4.6918, -150.9637)
 
-[node name="Cell22" parent="Cells" instance=ExtResource("6_rbc")]
+[node name="Cell22" parent="Cells" unique_id=599937750 instance=ExtResource("6_rbc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4773, 1.6153, -41.3461)
 
-[node name="Cell23" parent="Cells" instance=ExtResource("6_rbc")]
+[node name="Cell23" parent="Cells" unique_id=223795903 instance=ExtResource("6_rbc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3852, 4.0599, -23.9004)
 
-[node name="Cell24" parent="Cells" instance=ExtResource("6_rbc")]
+[node name="Cell24" parent="Cells" unique_id=96302276 instance=ExtResource("6_rbc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4197, 4.4794, -111.3723)
 
-[node name="Cell25" parent="Cells" instance=ExtResource("6_rbc")]
+[node name="Cell25" parent="Cells" unique_id=2128671629 instance=ExtResource("6_rbc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7182, -1.6848, -124.1021)
 
-[node name="Cell26" parent="Cells" instance=ExtResource("6_rbc")]
+[node name="Cell26" parent="Cells" unique_id=1910359766 instance=ExtResource("6_rbc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1805, -1.4734, -25.8969)
 
-[node name="Cell27" parent="Cells" instance=ExtResource("6_rbc")]
+[node name="Cell27" parent="Cells" unique_id=142478738 instance=ExtResource("6_rbc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7155, 1.8809, -14.0598)
 
-[node name="ExitRing" type="MeshInstance3D" parent="."]
+[node name="ExitRing" type="MeshInstance3D" parent="." unique_id=1011979324]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, -158)
 material_override = SubResource("exit_mat")
 mesh = SubResource("exit_mesh")
 
-[node name="ExitLabel" type="Label3D" parent="."]
+[node name="ExitLabel" type="Label3D" parent="." unique_id=572776255]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -156)
-visible = false
 pixel_size = 0.015
 billboard = 1
 no_depth_test = true
@@ -266,15 +265,15 @@ modulate = Color(0.7, 0.92, 1, 1)
 text = "PULMONARY VEIN  →  HEART"
 font_size = 64
 
-[node name="ExitTrigger" type="Area3D" parent="."]
+[node name="ExitTrigger" type="Area3D" parent="." unique_id=264604243]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -158)
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ExitTrigger"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ExitTrigger" unique_id=1390634236]
 shape = SubResource("exit_shape")
 
-[node name="Player" parent="." instance=ExtResource("3_player")]
+[node name="Player" parent="." unique_id=445751083 instance=ExtResource("3_player")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -6)
 

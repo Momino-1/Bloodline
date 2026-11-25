@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene format=3 uid="uid://dbppwt4vytlfa"]
 
-[ext_resource type="Script" path="res://scripts/ui/info_panel.gd" id="1_s"]
+[ext_resource type="Script" uid="uid://deph4yawby7a7" path="res://scripts/ui/info_panel.gd" id="1_s"]
 
-[node name="InfoPanel" type="Control"]
+[node name="InfoPanel" type="Control" unique_id=156956354]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_s")

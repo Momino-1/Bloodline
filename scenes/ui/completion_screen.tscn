@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene format=3 uid="uid://b0epmurypn7k5"]
 
-[ext_resource type="Script" path="res://scripts/ui/completion_screen.gd" id="1_s"]
+[ext_resource type="Script" uid="uid://cpnikpww3ihls" path="res://scripts/ui/completion_screen.gd" id="1_s"]
 
-[node name="CompletionScreen" type="Control"]
+[node name="CompletionScreen" type="Control" unique_id=851988413]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_s")
