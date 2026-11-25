@@ -1,0 +1,82 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/player/rbc_player.gd" id="1_s"]
+[ext_resource type="Script" path="res://scripts/gameplay/rbc_mesh.gd" id="2_mesh"]
+
+[sub_resource type="StandardMaterial3D" id="cellmat"]
+cull_mode = 2
+albedo_color = Color(0.36, 0.07, 0.24, 1.0)
+roughness = 0.38
+emission_enabled = true
+emission = Color(0.36, 0.07, 0.24, 1.0)
+emission_energy_multiplier = 0.25
+rim_enabled = true
+rim = 0.5
+rim_tint = 0.4
+
+[sub_resource type="SphereShape3D" id="body_shape"]
+radius = 0.75
+
+[sub_resource type="StandardMaterial3D" id="mote_mat"]
+albedo_color = Color(0.59, 0.0, 0.0, 1.0)
+roughness = 0.5
+emission_enabled = true
+emission = Color(0.59, 0.0, 0.0, 1.0)
+emission_energy_multiplier = 1.5
+
+[sub_resource type="SphereMesh" id="mote_mesh"]
+material = SubResource("mote_mat")
+radius = 0.04
+height = 0.08
+radial_segments = 6
+rings = 3
+
+[sub_resource type="SphereShape3D" id="spring_shape"]
+radius = 0.4
+
+[node name="RedBloodCell" type="CharacterBody3D"]
+collision_layer = 2
+motion_mode = 1
+script = ExtResource("1_s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("body_shape")
+
+[node name="Visual" type="Node3D" parent="."]
+
+[node name="Mesh" type="MeshInstance3D" parent="Visual"]
+transform = Transform3D(0.95, 0, 0, 0, 0.95, 0, 0, 0, 0.95, 0, 0, 0)
+material_override = SubResource("cellmat")
+script = ExtResource("2_mesh")
+
+[node name="Lamp" type="OmniLight3D" parent="."]
+light_color = Color(1.0, 0.78, 0.72, 1.0)
+light_energy = 1.8
+omni_range = 16.0
+
+[node name="Motes" type="CPUParticles3D" parent="."]
+amount = 80
+lifetime = 10.0
+preprocess = 4.0
+local_coords = false
+mesh = SubResource("mote_mesh")
+emission_shape = 1
+emission_sphere_radius = 12.0
+direction = Vector3(0, 0, -1)
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 0.1
+initial_velocity_max = 0.6
+
+[node name="Pivot" type="Node3D" parent="."]
+top_level = true
+
+[node name="SpringArm3D" type="SpringArm3D" parent="Pivot"]
+shape = SubResource("spring_shape")
+spring_length = 6.5
+margin = 0.4
+
+[node name="Camera3D" type="Camera3D" parent="Pivot/SpringArm3D"]
+current = true
+fov = 70.0
+far = 300.0

@@ -1,0 +1,36 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/gameplay/oxygen_molecule.gd" id="1_s"]
+
+[sub_resource type="SphereShape3D" id="shape"]
+radius = 1.1
+
+[sub_resource type="StandardMaterial3D" id="mat"]
+albedo_color = Color(0.55, 0.88, 1.0, 1.0)
+roughness = 0.2
+emission_enabled = true
+emission = Color(0.55, 0.88, 1.0, 1.0)
+emission_energy_multiplier = 2.2
+
+[sub_resource type="SphereMesh" id="atom"]
+material = SubResource("mat")
+radius = 0.2
+height = 0.4
+
+[node name="OxygenMolecule" type="Area3D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("shape")
+
+[node name="Visual" type="Node3D" parent="."]
+
+[node name="AtomA" type="MeshInstance3D" parent="Visual"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17, 0, 0)
+mesh = SubResource("atom")
+
+[node name="AtomB" type="MeshInstance3D" parent="Visual"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17, 0, 0)
+mesh = SubResource("atom")

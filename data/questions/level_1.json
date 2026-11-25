@@ -1,0 +1,90 @@
+{
+  "id": "level_1",
+  "title": "Level 1 · The Lungs",
+  "text": {
+    "briefing": {
+      "title": "Level 1 · The Lungs",
+      "topic": "Pulmonary circulation · Gas exchange",
+      "body": "You are an [b]erythrocyte[/b] (red blood cell) that has just arrived from the body. Most of your haemoglobin has given up its oxygen, so you look dark purple-red.\n\nYou are now inside a [b]pulmonary capillary[/b], a vessel only one cell wide that wraps around the air sacs (alveoli) of the lung. Here you will pick up oxygen.\n\n[b]Your mission[/b]\n• Find a glowing alveolus and inspect it with [b]E[/b].\n• Collect oxygen until your haemoglobin is fully saturated.\n• Pass the knowledge check, then swim on to the pulmonary vein.\n\n[b]Controls[/b]  WASD move · Mouse look · Space / Ctrl up and down · Shift boost · E interact · Tab encyclopedia · Esc pause"
+    },
+    "alveolus_extra": "[b]What you are seeing[/b]\nThe pale blue dome pressing into the capillary is the wall of an alveolus. Between the air inside it and the blood around you there are only two very thin cells: the alveolar epithelium and the capillary endothelium. Together with their basement membranes they form the [b]alveolar–capillary membrane[/b], roughly 0.5 µm thick.\n\nWatch the glowing oxygen molecules cross it into the blood.",
+    "diffusion_extra": "[b]Why does oxygen move into the blood?[/b]\nAir in the alveolus has a partial pressure of oxygen of about 13 kPa. The blood arriving from the body has only about 5 kPa. Oxygen therefore diffuses down this gradient from the alveolus into the blood, without any energy from ATP. Carbon dioxide does the reverse, because its partial pressure is higher in the blood (about 6 kPa) than in the alveolus (about 5 kPa).",
+    "cell_extra": "Look at the red cells around you. Those near the start of the capillary are dark because they have just arrived from the body. Those further along are bright red because their haemoglobin has already loaded oxygen.",
+    "capillary_extra": "You are touching the capillary wall: a single layer of [b]endothelial cells[/b]. The wall is so thin that oxygen has only a very short distance to diffuse, and the narrow vessel forces red cells through in single file.",
+    "saturated": "[b]Fully loaded![/b]\nEach haemoglobin molecule can bind up to four O₂ molecules, one at each haem group. Your haemoglobin is now almost completely saturated, and the blood is called [b]oxygenated[/b]. That is why you have changed from dark purple-red to bright red."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "question": "Why does oxygen diffuse from the alveoli into the blood of the pulmonary capillaries?",
+      "options": [
+        "The partial pressure of oxygen is higher in the alveolus than in the blood arriving from the body.",
+        "Red blood cells use ATP to pump oxygen across the membrane.",
+        "The capillary wall contracts and squeezes oxygen into the blood.",
+        "Haemoglobin is produced inside the alveoli."
+      ],
+      "answer": 0,
+      "explanation": "Diffusion is the net movement of particles from a region of higher concentration (or partial pressure) to a region of lower concentration. Air in the alveolus has a higher partial pressure of O₂ than the blood arriving from the body, so O₂ moves into the blood down its concentration gradient.",
+      "concept": "Diffusion is passive and needs no ATP. Gas exchange surfaces keep the gradient steep through ventilation and blood flow."
+    },
+    {
+      "id": "q2",
+      "question": "What is the main function of haemoglobin?",
+      "options": [
+        "Transport oxygen.",
+        "Produce glucose.",
+        "Destroy bacteria.",
+        "Produce ATP."
+      ],
+      "answer": 0,
+      "explanation": "Haemoglobin is a protein inside erythrocytes. Each haem group contains an iron ion (Fe²⁺) that reversibly binds one O₂ molecule, so oxygen can be picked up in the lungs and released in the tissues.",
+      "concept": "Oxygen dissolves poorly in plasma. Haemoglobin allows blood to carry far more oxygen than plasma could on its own."
+    },
+    {
+      "id": "q3",
+      "question": "Which feature of the alveolar–capillary membrane makes gas exchange efficient?",
+      "options": [
+        "It is extremely thin, so the diffusion distance is short.",
+        "It is thick and muscular so it can push gases through.",
+        "It is waterproof so that gases cannot dissolve.",
+        "It contains no blood vessels."
+      ],
+      "answer": 0,
+      "explanation": "The alveolar wall and the capillary wall are each only one cell thick, giving a membrane about 0.5 µm across. According to Fick's law, the rate of diffusion increases when the diffusion distance is short.",
+      "concept": "Gas exchange surfaces are adapted with a large surface area, a thin barrier and a steep concentration gradient."
+    },
+    {
+      "id": "q4",
+      "question": "How many oxygen molecules can one haemoglobin molecule carry?",
+      "options": [
+        "1",
+        "2",
+        "4",
+        "8"
+      ],
+      "answer": 2,
+      "explanation": "Adult haemoglobin has four polypeptide chains, and each chain has one haem group that can bind one O₂ molecule. One haemoglobin can therefore carry up to four O₂ molecules.",
+      "concept": "Haemoglobin carrying oxygen is called oxyhaemoglobin. Binding is cooperative: after the first O₂ binds, the others bind more easily."
+    },
+    {
+      "id": "q5",
+      "question": "Why is it important that we keep breathing and that blood keeps flowing through the pulmonary capillaries?",
+      "options": [
+        "Both maintain a steep concentration gradient for oxygen.",
+        "They make the alveolar wall thicker.",
+        "They stop oxygen from dissolving in water.",
+        "They convert haemoglobin into glucose."
+      ],
+      "answer": 0,
+      "explanation": "Ventilation replaces oxygen-depleted air in the alveolus with fresh air, and blood flow carries oxygenated blood away and brings in oxygen-poor blood. Both keep the partial pressure difference large, so diffusion can continue.",
+      "concept": "A steep concentration gradient is one of the key factors that increase the rate of diffusion."
+    }
+  ],
+  "summary": [
+    "Gas exchange happens by diffusion across the very thin alveolar–capillary membrane.",
+    "Oxygen diffuses from the alveolus (higher partial pressure) into the blood (lower partial pressure) without using ATP.",
+    "Haemoglobin in erythrocytes binds up to four O₂ molecules, forming oxyhaemoglobin.",
+    "Ventilation and blood flow keep the concentration gradient steep.",
+    "Oxygen-rich blood leaves the lungs through the pulmonary veins and travels to the left side of the heart."
+  ]
+}

@@ -1,0 +1,90 @@
+[
+  {
+    "id": "erythrocyte",
+    "name": "Erythrocyte (red blood cell)",
+    "topic": "Blood · Transport",
+    "shape": "disc",
+    "function": "Transports oxygen from the lungs to the tissues and helps carry carbon dioxide back to the lungs.",
+    "explanation": "Erythrocytes are biconcave discs about 7–8 µm across. Mature mammalian red cells have no nucleus and almost no organelles, which leaves room for several hundred million haemoglobin molecules per cell. The biconcave shape gives a large surface-area-to-volume ratio and a short diffusion distance to the haemoglobin, and the cell is flexible enough to squeeze through narrow capillaries. Red cells are made in the red bone marrow and live for about 120 days."
+  },
+  {
+    "id": "haemoglobin",
+    "name": "Haemoglobin",
+    "topic": "Proteins · Oxygen transport",
+    "shape": "haemoglobin",
+    "function": "Binds oxygen reversibly in the lungs and releases it in the tissues.",
+    "explanation": "Adult haemoglobin is a protein with four polypeptide chains (two α and two β). Each chain holds a haem group with an iron ion (Fe²⁺) that can bind one O₂ molecule, so one haemoglobin can carry up to four O₂. Binding is cooperative: once one O₂ has bound, the others bind more easily. Where the partial pressure of O₂ is high (lungs) haemoglobin loads oxygen; where it is low, or CO₂ is high and pH is lower (active tissues), it unloads oxygen."
+  },
+  {
+    "id": "alveolus",
+    "name": "Alveolus",
+    "topic": "Gas exchange · Lungs",
+    "shape": "alveolus",
+    "function": "Provides a large, thin, moist surface where oxygen enters the blood and carbon dioxide leaves it.",
+    "explanation": "Alveoli are microscopic air sacs at the ends of the bronchioles, each about 0.2 mm across. There are hundreds of millions of them, giving a total surface area of roughly 70 m². The wall is a single layer of flattened epithelial cells, closely wrapped by a dense network of capillaries. Together the alveolar and capillary walls form a membrane only about 0.5 µm thick. A film of fluid lets gases dissolve, and surfactant reduces surface tension so the alveoli do not collapse."
+  },
+  {
+    "id": "capillary",
+    "name": "Capillary",
+    "topic": "Blood vessels · Exchange",
+    "shape": "capillary",
+    "function": "Allows exchange of gases, nutrients and waste between the blood and the surrounding tissue.",
+    "explanation": "Capillaries are the smallest blood vessels, only about 5–10 µm wide. Their wall is a single layer of endothelial cells, so substances only need to diffuse a very short distance. Red cells travel through them almost in single file. Because there are so many capillaries, their combined cross-sectional area is large and blood flows slowly, which gives time for exchange by diffusion."
+  },
+  {
+    "id": "artery",
+    "name": "Artery",
+    "topic": "Blood vessels · Circulation",
+    "shape": "artery",
+    "function": "Carries blood away from the heart under high pressure.",
+    "explanation": "Artery walls are thick and contain elastic fibres and smooth muscle. The elastic fibres stretch with each heartbeat and recoil afterwards, which smooths the pulse and keeps the pressure high. Arteries branch into narrower arterioles whose muscle can constrict or dilate to control blood flow to a tissue. Most arteries carry oxygen-rich blood, the exception being the pulmonary artery, which carries oxygen-poor blood from the heart to the lungs."
+  },
+  {
+    "id": "vein",
+    "name": "Vein",
+    "topic": "Blood vessels · Circulation",
+    "shape": "vein",
+    "function": "Returns blood to the heart at low pressure.",
+    "explanation": "Veins have thinner walls and a wider lumen than arteries because the pressure inside them is low. Valves prevent backflow, and the contraction of surrounding skeletal muscles squeezes the veins and pushes blood towards the heart. Most veins carry oxygen-poor blood, the exception being the pulmonary veins, which carry oxygen-rich blood from the lungs to the heart."
+  },
+  {
+    "id": "mitochondrion",
+    "name": "Mitochondrion",
+    "topic": "Cell biology · Energy",
+    "shape": "mitochondrion",
+    "function": "Site of aerobic respiration, where most of the cell's ATP is made.",
+    "explanation": "A mitochondrion has an outer membrane and a highly folded inner membrane. The folds, called cristae, increase the surface area that holds the electron transport chain and ATP synthase. The fluid inside, the matrix, contains the enzymes for the link reaction and the Krebs cycle. Oxygen is the final electron acceptor in the electron transport chain and combines with hydrogen to form water. Cells with a high energy demand, such as muscle cells, contain many mitochondria."
+  },
+  {
+    "id": "atp",
+    "name": "ATP",
+    "topic": "Cell biology · Energy",
+    "shape": "atp",
+    "function": "The immediate energy currency of the cell.",
+    "explanation": "ATP (adenosine triphosphate) consists of adenosine and three phosphate groups. Hydrolysis of the terminal phosphate gives ADP and inorganic phosphate and releases a small, usable amount of energy. That energy powers muscle contraction, active transport and the synthesis of macromolecules. Cells store very little ATP, so they must constantly regenerate it from ADP in respiration. Aerobic respiration produces roughly 30 ATP per glucose, compared with 2 from glycolysis alone."
+  },
+  {
+    "id": "diffusion",
+    "name": "Diffusion",
+    "topic": "Transport across membranes",
+    "shape": "diffusion",
+    "function": "Passive net movement of particles from a region of higher concentration to a region of lower concentration.",
+    "explanation": "Particles move randomly because of their kinetic energy, and the net result is movement down a concentration gradient. No ATP is needed. The rate of diffusion increases with a steeper concentration gradient, a larger surface area and a shorter diffusion distance (Fick's law). In the lungs the partial pressure of O₂ in the alveolus (about 13 kPa) is higher than in blood arriving from the body (about 5 kPa), so O₂ diffuses into the blood. CO₂ diffuses the other way, from the blood (about 6 kPa) into the alveolus (about 5 kPa)."
+  },
+  {
+    "id": "cellular_respiration",
+    "name": "Cellular respiration",
+    "topic": "Metabolism · Energy",
+    "shape": "cellular_respiration",
+    "function": "Releases energy from glucose and uses it to make ATP.",
+    "explanation": "Aerobic respiration can be summarised as: glucose + oxygen → carbon dioxide + water + energy (ATP). It has four stages: glycolysis in the cytoplasm, the link reaction and Krebs cycle in the mitochondrial matrix, and oxidative phosphorylation on the cristae. Without oxygen, cells can only use glycolysis; in muscle the pyruvate is then converted to lactate, which yields far less ATP."
+  },
+  {
+    "id": "heart_chambers",
+    "name": "Heart chambers",
+    "topic": "Circulation · Heart",
+    "shape": "heart_chambers",
+    "function": "Four chambers keep oxygen-poor and oxygen-rich blood separate and pump it through a double circulation.",
+    "explanation": "The right atrium receives oxygen-poor blood from the body through the venae cavae; the right ventricle pumps it to the lungs through the pulmonary artery. The left atrium receives oxygen-rich blood from the lungs through the pulmonary veins; the left ventricle pumps it into the aorta and around the body. The left ventricle has the thickest wall because it must generate the highest pressure. Valves (tricuspid, pulmonary, bicuspid and aortic) ensure blood flows in one direction only."
+  }
+]

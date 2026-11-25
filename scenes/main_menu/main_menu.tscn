@@ -1,0 +1,168 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/main_menu.gd" id="1_s"]
+[ext_resource type="Theme" path="res://assets/ui/bloodline_theme.tres" id="2_theme"]
+[ext_resource type="PackedScene" path="res://scenes/main_menu/menu_background.tscn" id="3_bg"]
+[ext_resource type="PackedScene" path="res://scenes/ui/encyclopedia.tscn" id="4_enc"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_theme")
+script = ExtResource("1_s")
+
+[node name="MenuBackground" parent="." instance=ExtResource("3_bg")]
+layout_mode = 1
+
+[node name="Column" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 90.0
+offset_right = 90.0
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="Tagline" type="Label" parent="Column"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 0.85, 1.0, 1.0)
+theme_override_font_sizes/font_size = 14
+text = "Full cricle"
+
+[node name="Title" type="Label" parent="Column"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.2, 0.25, 1.0)
+theme_override_font_sizes/font_size = 78
+text = "BLOODLINE"
+
+[node name="Subtitle" type="Label" parent="Column"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.64, 0.68, 1.0)
+theme_override_font_sizes/font_size = 16
+text = "Biology"
+
+[node name="Gap" type="Control" parent="Column"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="Column"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 48)
+layout_mode = 2
+text = "Start game"
+
+[node name="ContinueButton" type="Button" parent="Column"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 48)
+layout_mode = 2
+text = "son"
+
+[node name="WikiButton" type="Button" parent="Column"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 48)
+layout_mode = 2
+text = "Biology Wiki"
+
+[node name="SettingsButton" type="Button" parent="Column"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 48)
+layout_mode = 2
+text = "Settings"
+
+[node name="ExitButton" type="Button" parent="Column"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 48)
+layout_mode = 2
+text = "Exit"
+
+[node name="Encyclopedia" parent="." instance=ExtResource("4_enc")]
+unique_name_in_owner = true
+layout_mode = 1
+
+[node name="Settings" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dim" type="ColorRect" parent="Settings"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.7)
+
+[node name="Center" type="CenterContainer" parent="Settings"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="Settings/Center"]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="Settings/Center/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Heading" type="Label" parent="Settings/Center/Panel/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.93, 0.9, 0.92, 1.0)
+theme_override_font_sizes/font_size = 26
+text = "SETTINGS"
+
+[node name="SensLabel" type="Label" parent="Settings/Center/Panel/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.64, 0.68, 1.0)
+theme_override_font_sizes/font_size = 16
+text = "Mouse sensitivity"
+
+[node name="SensSlider" type="HSlider" parent="Settings/Center/Panel/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(360, 24)
+layout_mode = 2
+min_value = 0.0008
+max_value = 0.008
+step = 0.0001
+value = 0.0008
+
+[node name="VolLabel" type="Label" parent="Settings/Center/Panel/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.64, 0.68, 1.0)
+theme_override_font_sizes/font_size = 16
+text = "Master volume"
+
+[node name="VolSlider" type="HSlider" parent="Settings/Center/Panel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+
+[node name="FullscreenCheck" type="CheckButton" parent="Settings/Center/Panel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Fullscreen"
+
+[node name="CloseButton" type="Button" parent="Settings/Center/Panel/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 44)
+layout_mode = 2
+text = "Close"
+
+[node name="ConfirmDialog" type="ConfirmationDialog" parent="."]
+unique_name_in_owner = true
+title = "New game"
+dialog_text = "Starting a new game erases your saved progress and discoveries. Continue?"

@@ -1,0 +1,687 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/menu_background.gd" id="1_s"]
+[ext_resource type="Script" path="res://scripts/gameplay/rbc_mesh.gd" id="2_mesh"]
+
+[sub_resource type="Environment" id="env"]
+background_mode = 1
+background_color = Color(1, 1, 1, 1)
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.8
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.988, 1, 1, 1)
+fog_density = 0.03
+
+[sub_resource type="StandardMaterial3D" id="cell_mat_0"]
+cull_mode = 2
+albedo_color = Color(0.684, 0.064, 0.140, 1.0)
+roughness = 0.38
+emission_enabled = true
+emission = Color(0.684, 0.064, 0.140, 1.0)
+emission_energy_multiplier = 0.25
+rim_enabled = true
+rim = 0.5
+rim_tint = 0.4
+
+[sub_resource type="StandardMaterial3D" id="cell_mat_1"]
+cull_mode = 2
+albedo_color = Color(0.602, 0.065, 0.166, 1.0)
+roughness = 0.38
+emission_enabled = true
+emission = Color(0.602, 0.065, 0.166, 1.0)
+emission_energy_multiplier = 0.25
+rim_enabled = true
+rim = 0.5
+rim_tint = 0.4
+
+[sub_resource type="StandardMaterial3D" id="cell_mat_2"]
+cull_mode = 2
+albedo_color = Color(0.643, 0.065, 0.153, 1.0)
+roughness = 0.38
+emission_enabled = true
+emission = Color(0.643, 0.065, 0.153, 1.0)
+emission_energy_multiplier = 0.25
+rim_enabled = true
+rim = 0.5
+rim_tint = 0.4
+
+[sub_resource type="StandardMaterial3D" id="cell_mat_3"]
+cull_mode = 2
+albedo_color = Color(0.443, 0.068, 0.214, 1.0)
+roughness = 0.38
+emission_enabled = true
+emission = Color(0.443, 0.068, 0.214, 1.0)
+emission_energy_multiplier = 0.25
+rim_enabled = true
+rim = 0.5
+rim_tint = 0.4
+
+[sub_resource type="StandardMaterial3D" id="cell_mat_4"]
+cull_mode = 2
+albedo_color = Color(0.469, 0.068, 0.206, 1.0)
+roughness = 0.38
+emission_enabled = true
+emission = Color(0.469, 0.068, 0.206, 1.0)
+emission_energy_multiplier = 0.25
+rim_enabled = true
+rim = 0.5
+rim_tint = 0.4
+
+[sub_resource type="StandardMaterial3D" id="cell_mat_5"]
+cull_mode = 2
+albedo_color = Color(0.712, 0.063, 0.132, 1.0)
+roughness = 0.38
+emission_enabled = true
+emission = Color(0.712, 0.063, 0.132, 1.0)
+emission_energy_multiplier = 0.25
+rim_enabled = true
+rim = 0.5
+rim_tint = 0.4
+
+[sub_resource type="StandardMaterial3D" id="cell_mat_6"]
+cull_mode = 2
+albedo_color = Color(0.548, 0.066, 0.182, 1.0)
+roughness = 0.38
+emission_enabled = true
+emission = Color(0.548, 0.066, 0.182, 1.0)
+emission_energy_multiplier = 0.25
+rim_enabled = true
+rim = 0.5
+rim_tint = 0.4
+
+[sub_resource type="StandardMaterial3D" id="cell_mat_7"]
+cull_mode = 2
+albedo_color = Color(0.713, 0.063, 0.132, 1.0)
+roughness = 0.38
+emission_enabled = true
+emission = Color(0.713, 0.063, 0.132, 1.0)
+emission_energy_multiplier = 0.25
+rim_enabled = true
+rim = 0.5
+rim_tint = 0.4
+
+[sub_resource type="StandardMaterial3D" id="cell_mat_8"]
+cull_mode = 2
+albedo_color = Color(0.726, 0.063, 0.127, 1.0)
+roughness = 0.38
+emission_enabled = true
+emission = Color(0.726, 0.063, 0.127, 1.0)
+emission_energy_multiplier = 0.25
+rim_enabled = true
+rim = 0.5
+rim_tint = 0.4
+
+[sub_resource type="StandardMaterial3D" id="cell_mat_9"]
+cull_mode = 2
+albedo_color = Color(0.770, 0.062, 0.114, 1.0)
+roughness = 0.38
+emission_enabled = true
+emission = Color(0.770, 0.062, 0.114, 1.0)
+emission_energy_multiplier = 0.25
+rim_enabled = true
+rim = 0.5
+rim_tint = 0.4
+
+[sub_resource type="StandardMaterial3D" id="cell_mat_10"]
+cull_mode = 2
+albedo_color = Color(0.462, 0.068, 0.209, 1.0)
+roughness = 0.38
+emission_enabled = true
+emission = Color(0.462, 0.068, 0.209, 1.0)
+emission_energy_multiplier = 0.25
+rim_enabled = true
+rim = 0.5
+rim_tint = 0.4
+
+[sub_resource type="StandardMaterial3D" id="cell_mat_11"]
+cull_mode = 2
+albedo_color = Color(0.763, 0.062, 0.116, 1.0)
+roughness = 0.38
+emission_enabled = true
+emission = Color(0.763, 0.062, 0.116, 1.0)
+emission_energy_multiplier = 0.25
+rim_enabled = true
+rim = 0.5
+rim_tint = 0.4
+
+[sub_resource type="StandardMaterial3D" id="cell_mat_12"]
+cull_mode = 2
+albedo_color = Color(0.407, 0.069, 0.225, 1.0)
+roughness = 0.38
+emission_enabled = true
+emission = Color(0.407, 0.069, 0.225, 1.0)
+emission_energy_multiplier = 0.25
+rim_enabled = true
+rim = 0.5
+rim_tint = 0.4
+
+[sub_resource type="StandardMaterial3D" id="cell_mat_13"]
+cull_mode = 2
+albedo_color = Color(0.522, 0.067, 0.190, 1.0)
+roughness = 0.38
+emission_enabled = true
+emission = Color(0.522, 0.067, 0.190, 1.0)
+emission_energy_multiplier = 0.25
+rim_enabled = true
+rim = 0.5
+rim_tint = 0.4
+
+[sub_resource type="StandardMaterial3D" id="cell_mat_14"]
+cull_mode = 2
+albedo_color = Color(0.444, 0.068, 0.214, 1.0)
+roughness = 0.38
+emission_enabled = true
+emission = Color(0.444, 0.068, 0.214, 1.0)
+emission_energy_multiplier = 0.25
+rim_enabled = true
+rim = 0.5
+rim_tint = 0.4
+
+[sub_resource type="StandardMaterial3D" id="cell_mat_15"]
+cull_mode = 2
+albedo_color = Color(0.790, 0.062, 0.108, 1.0)
+roughness = 0.38
+emission_enabled = true
+emission = Color(0.790, 0.062, 0.108, 1.0)
+emission_energy_multiplier = 0.25
+rim_enabled = true
+rim = 0.5
+rim_tint = 0.4
+
+[sub_resource type="StandardMaterial3D" id="cell_mat_16"]
+cull_mode = 2
+albedo_color = Color(0.796, 0.062, 0.106, 1.0)
+roughness = 0.38
+emission_enabled = true
+emission = Color(0.796, 0.062, 0.106, 1.0)
+emission_energy_multiplier = 0.25
+rim_enabled = true
+rim = 0.5
+rim_tint = 0.4
+
+[sub_resource type="StandardMaterial3D" id="cell_mat_17"]
+cull_mode = 2
+albedo_color = Color(0.586, 0.066, 0.170, 1.0)
+roughness = 0.38
+emission_enabled = true
+emission = Color(0.586, 0.066, 0.170, 1.0)
+emission_energy_multiplier = 0.25
+rim_enabled = true
+rim = 0.5
+rim_tint = 0.4
+
+[sub_resource type="StandardMaterial3D" id="cell_mat_18"]
+cull_mode = 2
+albedo_color = Color(0.868, 0.060, 0.084, 1.0)
+roughness = 0.38
+emission_enabled = true
+emission = Color(0.868, 0.060, 0.084, 1.0)
+emission_energy_multiplier = 0.25
+rim_enabled = true
+rim = 0.5
+rim_tint = 0.4
+
+[sub_resource type="StandardMaterial3D" id="cell_mat_19"]
+cull_mode = 2
+albedo_color = Color(0.436, 0.069, 0.217, 1.0)
+roughness = 0.38
+emission_enabled = true
+emission = Color(0.436, 0.069, 0.217, 1.0)
+emission_energy_multiplier = 0.25
+rim_enabled = true
+rim = 0.5
+rim_tint = 0.4
+
+[sub_resource type="StandardMaterial3D" id="cell_mat_20"]
+cull_mode = 2
+albedo_color = Color(0.406, 0.069, 0.226, 1.0)
+roughness = 0.38
+emission_enabled = true
+emission = Color(0.406, 0.069, 0.226, 1.0)
+emission_energy_multiplier = 0.25
+rim_enabled = true
+rim = 0.5
+rim_tint = 0.4
+
+[sub_resource type="StandardMaterial3D" id="cell_mat_21"]
+cull_mode = 2
+albedo_color = Color(0.721, 0.063, 0.129, 1.0)
+roughness = 0.38
+emission_enabled = true
+emission = Color(0.721, 0.063, 0.129, 1.0)
+emission_energy_multiplier = 0.25
+rim_enabled = true
+rim = 0.5
+rim_tint = 0.4
+
+[sub_resource type="StandardMaterial3D" id="cell_mat_22"]
+cull_mode = 2
+albedo_color = Color(0.760, 0.062, 0.117, 1.0)
+roughness = 0.38
+emission_enabled = true
+emission = Color(0.760, 0.062, 0.117, 1.0)
+emission_energy_multiplier = 0.25
+rim_enabled = true
+rim = 0.5
+rim_tint = 0.4
+
+[sub_resource type="StandardMaterial3D" id="cell_mat_23"]
+cull_mode = 2
+albedo_color = Color(0.644, 0.065, 0.152, 1.0)
+roughness = 0.38
+emission_enabled = true
+emission = Color(0.644, 0.065, 0.152, 1.0)
+emission_energy_multiplier = 0.25
+rim_enabled = true
+rim = 0.5
+rim_tint = 0.4
+
+[sub_resource type="StandardMaterial3D" id="cell_mat_24"]
+cull_mode = 2
+albedo_color = Color(0.541, 0.067, 0.184, 1.0)
+roughness = 0.38
+emission_enabled = true
+emission = Color(0.541, 0.067, 0.184, 1.0)
+emission_energy_multiplier = 0.25
+rim_enabled = true
+rim = 0.5
+rim_tint = 0.4
+
+[sub_resource type="StandardMaterial3D" id="cell_mat_25"]
+cull_mode = 2
+albedo_color = Color(0.718, 0.063, 0.130, 1.0)
+roughness = 0.38
+emission_enabled = true
+emission = Color(0.718, 0.063, 0.130, 1.0)
+emission_energy_multiplier = 0.25
+rim_enabled = true
+rim = 0.5
+rim_tint = 0.4
+
+[sub_resource type="StandardMaterial3D" id="cell_mat_26"]
+cull_mode = 2
+albedo_color = Color(0.847, 0.061, 0.090, 1.0)
+roughness = 0.38
+emission_enabled = true
+emission = Color(0.847, 0.061, 0.090, 1.0)
+emission_energy_multiplier = 0.25
+rim_enabled = true
+rim = 0.5
+rim_tint = 0.4
+
+[sub_resource type="StandardMaterial3D" id="cell_mat_27"]
+cull_mode = 2
+albedo_color = Color(0.662, 0.064, 0.147, 1.0)
+roughness = 0.38
+emission_enabled = true
+emission = Color(0.662, 0.064, 0.147, 1.0)
+emission_energy_multiplier = 0.25
+rim_enabled = true
+rim = 0.5
+rim_tint = 0.4
+
+[sub_resource type="StandardMaterial3D" id="cell_mat_28"]
+cull_mode = 2
+albedo_color = Color(0.374, 0.070, 0.236, 1.0)
+roughness = 0.38
+emission_enabled = true
+emission = Color(0.374, 0.070, 0.236, 1.0)
+emission_energy_multiplier = 0.25
+rim_enabled = true
+rim = 0.5
+rim_tint = 0.4
+
+[sub_resource type="StandardMaterial3D" id="cell_mat_29"]
+cull_mode = 2
+albedo_color = Color(0.382, 0.070, 0.233, 1.0)
+roughness = 0.38
+emission_enabled = true
+emission = Color(0.382, 0.070, 0.233, 1.0)
+emission_energy_multiplier = 0.25
+rim_enabled = true
+rim = 0.5
+rim_tint = 0.4
+
+[sub_resource type="StandardMaterial3D" id="cell_mat_30"]
+cull_mode = 2
+albedo_color = Color(0.461, 0.068, 0.209, 1.0)
+roughness = 0.38
+emission_enabled = true
+emission = Color(0.461, 0.068, 0.209, 1.0)
+emission_energy_multiplier = 0.25
+rim_enabled = true
+rim = 0.5
+rim_tint = 0.4
+
+[sub_resource type="StandardMaterial3D" id="cell_mat_31"]
+cull_mode = 2
+albedo_color = Color(0.830, 0.061, 0.095, 1.0)
+roughness = 0.38
+emission_enabled = true
+emission = Color(0.830, 0.061, 0.095, 1.0)
+emission_energy_multiplier = 0.25
+rim_enabled = true
+rim = 0.5
+rim_tint = 0.4
+
+[sub_resource type="StandardMaterial3D" id="cell_mat_32"]
+cull_mode = 2
+albedo_color = Color(0.554, 0.066, 0.180, 1.0)
+roughness = 0.38
+emission_enabled = true
+emission = Color(0.554, 0.066, 0.180, 1.0)
+emission_energy_multiplier = 0.25
+rim_enabled = true
+rim = 0.5
+rim_tint = 0.4
+
+[sub_resource type="StandardMaterial3D" id="cell_mat_33"]
+cull_mode = 2
+albedo_color = Color(0.858, 0.060, 0.087, 1.0)
+roughness = 0.38
+emission_enabled = true
+emission = Color(0.858, 0.060, 0.087, 1.0)
+emission_energy_multiplier = 0.25
+rim_enabled = true
+rim = 0.5
+rim_tint = 0.4
+
+[sub_resource type="StandardMaterial3D" id="cell_mat_34"]
+cull_mode = 2
+albedo_color = Color(0.670, 0.064, 0.145, 1.0)
+roughness = 0.38
+emission_enabled = true
+emission = Color(0.670, 0.064, 0.145, 1.0)
+emission_energy_multiplier = 0.25
+rim_enabled = true
+rim = 0.5
+rim_tint = 0.4
+
+[sub_resource type="StandardMaterial3D" id="cell_mat_35"]
+cull_mode = 2
+albedo_color = Color(0.360, 0.070, 0.240, 1.0)
+roughness = 0.38
+emission_enabled = true
+emission = Color(0.360, 0.070, 0.240, 1.0)
+emission_energy_multiplier = 0.25
+rim_enabled = true
+rim = 0.5
+rim_tint = 0.4
+
+[sub_resource type="StandardMaterial3D" id="cell_mat_36"]
+cull_mode = 2
+albedo_color = Color(0.555, 0.066, 0.180, 1.0)
+roughness = 0.38
+emission_enabled = true
+emission = Color(0.555, 0.066, 0.180, 1.0)
+emission_energy_multiplier = 0.25
+rim_enabled = true
+rim = 0.5
+rim_tint = 0.4
+
+[sub_resource type="StandardMaterial3D" id="cell_mat_37"]
+cull_mode = 2
+albedo_color = Color(0.835, 0.061, 0.094, 1.0)
+roughness = 0.38
+emission_enabled = true
+emission = Color(0.835, 0.061, 0.094, 1.0)
+emission_energy_multiplier = 0.25
+rim_enabled = true
+rim = 0.5
+rim_tint = 0.4
+
+[node name="MenuBackground" type="SubViewportContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+stretch = true
+script = ExtResource("1_s")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+own_world_3d = true
+msaa_3d = 2
+handle_input_locally = false
+size = Vector2i(1280, 720)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+environment = SubResource("env")
+
+[node name="Sun" type="DirectionalLight3D" parent="SubViewport"]
+rotation = Vector3(-0.6109, 0.4363, 0)
+
+[node name="Cells" type="Node3D" parent="SubViewport"]
+
+[node name="Cell0" type="MeshInstance3D" parent="SubViewport/Cells"]
+transform = Transform3D(0.626, 0, 0, 0, 0.626, 0, 0, 0, 0.626, 5.803, 4.133, 1.101)
+material_override = SubResource("cell_mat_0")
+script = ExtResource("2_mesh")
+rotation = Vector3(4.649, 5.795, 0)
+
+[node name="Cell1" type="MeshInstance3D" parent="SubViewport/Cells"]
+transform = Transform3D(0.822, 0, 0, 0, 0.822, 0, 0, 0, 0.822, 10.641, 2.086, -0.270)
+material_override = SubResource("cell_mat_1")
+script = ExtResource("2_mesh")
+rotation = Vector3(0.711, 2.947, 0)
+
+[node name="Cell2" type="MeshInstance3D" parent="SubViewport/Cells"]
+transform = Transform3D(1.289, 0, 0, 0, 1.289, 0, 0, 0, 1.289, 1.775, -6.816, -22.848)
+material_override = SubResource("cell_mat_2")
+script = ExtResource("2_mesh")
+rotation = Vector3(1.756, 5.758, 0)
+
+[node name="Cell3" type="MeshInstance3D" parent="SubViewport/Cells"]
+transform = Transform3D(1.384, 0, 0, 0, 1.384, 0, 0, 0, 1.384, 7.132, -5.057, -9.624)
+material_override = SubResource("cell_mat_3")
+script = ExtResource("2_mesh")
+rotation = Vector3(0.796, 0.011, 0)
+
+[node name="Cell4" type="MeshInstance3D" parent="SubViewport/Cells"]
+transform = Transform3D(1.085, 0, 0, 0, 1.085, 0, 0, 0, 1.085, -6.828, 6.754, -1.211)
+material_override = SubResource("cell_mat_4")
+script = ExtResource("2_mesh")
+rotation = Vector3(1.818, 6.041, 0)
+
+[node name="Cell5" type="MeshInstance3D" parent="SubViewport/Cells"]
+transform = Transform3D(0.869, 0, 0, 0, 0.869, 0, 0, 0, 0.869, -7.085, 6.174, -7.209)
+material_override = SubResource("cell_mat_5")
+script = ExtResource("2_mesh")
+rotation = Vector3(6.073, 5.616, 0)
+
+[node name="Cell6" type="MeshInstance3D" parent="SubViewport/Cells"]
+transform = Transform3D(0.603, 0, 0, 0, 0.603, 0, 0, 0, 0.603, -8.017, -4.960, -27.850)
+material_override = SubResource("cell_mat_6")
+script = ExtResource("2_mesh")
+rotation = Vector3(1.893, 3.789, 0)
+
+[node name="Cell7" type="MeshInstance3D" parent="SubViewport/Cells"]
+transform = Transform3D(1.033, 0, 0, 0, 1.033, 0, 0, 0, 1.033, -3.890, -2.661, -2.989)
+material_override = SubResource("cell_mat_7")
+script = ExtResource("2_mesh")
+rotation = Vector3(3.021, 1.984, 0)
+
+[node name="Cell8" type="MeshInstance3D" parent="SubViewport/Cells"]
+transform = Transform3D(0.616, 0, 0, 0, 0.616, 0, 0, 0, 0.616, -10.632, 6.651, -29.245)
+material_override = SubResource("cell_mat_8")
+script = ExtResource("2_mesh")
+rotation = Vector3(4.711, 5.309, 0)
+
+[node name="Cell9" type="MeshInstance3D" parent="SubViewport/Cells"]
+transform = Transform3D(1.460, 0, 0, 0, 1.460, 0, 0, 0, 1.460, -3.212, 1.099, -29.700)
+material_override = SubResource("cell_mat_9")
+script = ExtResource("2_mesh")
+rotation = Vector3(0.294, 1.137, 0)
+
+[node name="Cell10" type="MeshInstance3D" parent="SubViewport/Cells"]
+transform = Transform3D(1.072, 0, 0, 0, 1.072, 0, 0, 0, 1.072, 6.138, 6.015, 1.087)
+material_override = SubResource("cell_mat_10")
+script = ExtResource("2_mesh")
+rotation = Vector3(2.164, 2.229, 0)
+
+[node name="Cell11" type="MeshInstance3D" parent="SubViewport/Cells"]
+transform = Transform3D(1.451, 0, 0, 0, 1.451, 0, 0, 0, 1.451, -9.407, 3.478, -3.692)
+material_override = SubResource("cell_mat_11")
+script = ExtResource("2_mesh")
+rotation = Vector3(5.402, 0.230, 0)
+
+[node name="Cell12" type="MeshInstance3D" parent="SubViewport/Cells"]
+transform = Transform3D(1.091, 0, 0, 0, 1.091, 0, 0, 0, 1.091, -3.822, 1.552, 0.297)
+material_override = SubResource("cell_mat_12")
+script = ExtResource("2_mesh")
+rotation = Vector3(2.136, 5.807, 0)
+
+[node name="Cell13" type="MeshInstance3D" parent="SubViewport/Cells"]
+transform = Transform3D(1.497, 0, 0, 0, 1.497, 0, 0, 0, 1.497, -4.397, -4.515, -27.420)
+material_override = SubResource("cell_mat_13")
+script = ExtResource("2_mesh")
+rotation = Vector3(0.935, 4.330, 0)
+
+[node name="Cell14" type="MeshInstance3D" parent="SubViewport/Cells"]
+transform = Transform3D(1.135, 0, 0, 0, 1.135, 0, 0, 0, 1.135, -10.835, 6.814, -12.393)
+material_override = SubResource("cell_mat_14")
+script = ExtResource("2_mesh")
+rotation = Vector3(2.550, 1.491, 0)
+
+[node name="Cell15" type="MeshInstance3D" parent="SubViewport/Cells"]
+transform = Transform3D(1.044, 0, 0, 0, 1.044, 0, 0, 0, 1.044, -1.064, -1.095, -28.162)
+material_override = SubResource("cell_mat_15")
+script = ExtResource("2_mesh")
+rotation = Vector3(5.756, 0.206, 0)
+
+[node name="Cell16" type="MeshInstance3D" parent="SubViewport/Cells"]
+transform = Transform3D(0.696, 0, 0, 0, 0.696, 0, 0, 0, 0.696, -8.866, 3.243, 1.343)
+material_override = SubResource("cell_mat_16")
+script = ExtResource("2_mesh")
+rotation = Vector3(3.961, 4.951, 0)
+
+[node name="Cell17" type="MeshInstance3D" parent="SubViewport/Cells"]
+transform = Transform3D(1.367, 0, 0, 0, 1.367, 0, 0, 0, 1.367, -8.418, 4.826, -20.271)
+material_override = SubResource("cell_mat_17")
+script = ExtResource("2_mesh")
+rotation = Vector3(2.847, 6.279, 0)
+
+[node name="Cell18" type="MeshInstance3D" parent="SubViewport/Cells"]
+transform = Transform3D(0.963, 0, 0, 0, 0.963, 0, 0, 0, 0.963, -1.115, -0.166, -5.926)
+material_override = SubResource("cell_mat_18")
+script = ExtResource("2_mesh")
+rotation = Vector3(3.010, 1.829, 0)
+
+[node name="Cell19" type="MeshInstance3D" parent="SubViewport/Cells"]
+transform = Transform3D(0.905, 0, 0, 0, 0.905, 0, 0, 0, 0.905, -2.952, 6.837, 1.674)
+material_override = SubResource("cell_mat_19")
+script = ExtResource("2_mesh")
+rotation = Vector3(3.939, 3.137, 0)
+
+[node name="Cell20" type="MeshInstance3D" parent="SubViewport/Cells"]
+transform = Transform3D(1.297, 0, 0, 0, 1.297, 0, 0, 0, 1.297, -5.465, 3.948, -1.376)
+material_override = SubResource("cell_mat_20")
+script = ExtResource("2_mesh")
+rotation = Vector3(2.270, 4.939, 0)
+
+[node name="Cell21" type="MeshInstance3D" parent="SubViewport/Cells"]
+transform = Transform3D(1.037, 0, 0, 0, 1.037, 0, 0, 0, 1.037, 3.936, 3.635, -18.007)
+material_override = SubResource("cell_mat_21")
+script = ExtResource("2_mesh")
+rotation = Vector3(4.426, 1.765, 0)
+
+[node name="Cell22" type="MeshInstance3D" parent="SubViewport/Cells"]
+transform = Transform3D(0.610, 0, 0, 0, 0.610, 0, 0, 0, 0.610, 4.581, -2.886, 1.203)
+material_override = SubResource("cell_mat_22")
+script = ExtResource("2_mesh")
+rotation = Vector3(4.082, 3.648, 0)
+
+[node name="Cell23" type="MeshInstance3D" parent="SubViewport/Cells"]
+transform = Transform3D(1.318, 0, 0, 0, 1.318, 0, 0, 0, 1.318, -5.983, 2.403, -14.723)
+material_override = SubResource("cell_mat_23")
+script = ExtResource("2_mesh")
+rotation = Vector3(5.131, 4.068, 0)
+
+[node name="Cell24" type="MeshInstance3D" parent="SubViewport/Cells"]
+transform = Transform3D(1.383, 0, 0, 0, 1.383, 0, 0, 0, 1.383, 3.458, 3.330, -2.670)
+material_override = SubResource("cell_mat_24")
+script = ExtResource("2_mesh")
+rotation = Vector3(2.199, 5.296, 0)
+
+[node name="Cell25" type="MeshInstance3D" parent="SubViewport/Cells"]
+transform = Transform3D(1.353, 0, 0, 0, 1.353, 0, 0, 0, 1.353, 11.427, 6.391, -12.901)
+material_override = SubResource("cell_mat_25")
+script = ExtResource("2_mesh")
+rotation = Vector3(3.326, 1.044, 0)
+
+[node name="Cell26" type="MeshInstance3D" parent="SubViewport/Cells"]
+transform = Transform3D(1.302, 0, 0, 0, 1.302, 0, 0, 0, 1.302, -0.546, 2.680, -6.250)
+material_override = SubResource("cell_mat_26")
+script = ExtResource("2_mesh")
+rotation = Vector3(4.589, 1.080, 0)
+
+[node name="Cell27" type="MeshInstance3D" parent="SubViewport/Cells"]
+transform = Transform3D(1.248, 0, 0, 0, 1.248, 0, 0, 0, 1.248, 3.973, -1.109, -9.417)
+material_override = SubResource("cell_mat_27")
+script = ExtResource("2_mesh")
+rotation = Vector3(4.868, 4.002, 0)
+
+[node name="Cell28" type="MeshInstance3D" parent="SubViewport/Cells"]
+transform = Transform3D(1.168, 0, 0, 0, 1.168, 0, 0, 0, 1.168, -8.159, -0.825, -8.546)
+material_override = SubResource("cell_mat_28")
+script = ExtResource("2_mesh")
+rotation = Vector3(1.376, 4.310, 0)
+
+[node name="Cell29" type="MeshInstance3D" parent="SubViewport/Cells"]
+transform = Transform3D(0.763, 0, 0, 0, 0.763, 0, 0, 0, 0.763, -0.682, -3.833, -28.213)
+material_override = SubResource("cell_mat_29")
+script = ExtResource("2_mesh")
+rotation = Vector3(0.839, 1.994, 0)
+
+[node name="Cell30" type="MeshInstance3D" parent="SubViewport/Cells"]
+transform = Transform3D(0.814, 0, 0, 0, 0.814, 0, 0, 0, 0.814, -11.144, -0.485, -17.450)
+material_override = SubResource("cell_mat_30")
+script = ExtResource("2_mesh")
+rotation = Vector3(3.844, 3.708, 0)
+
+[node name="Cell31" type="MeshInstance3D" parent="SubViewport/Cells"]
+transform = Transform3D(1.348, 0, 0, 0, 1.348, 0, 0, 0, 1.348, -11.984, -1.325, -20.809)
+material_override = SubResource("cell_mat_31")
+script = ExtResource("2_mesh")
+rotation = Vector3(2.576, 0.723, 0)
+
+[node name="Cell32" type="MeshInstance3D" parent="SubViewport/Cells"]
+transform = Transform3D(1.123, 0, 0, 0, 1.123, 0, 0, 0, 1.123, -11.135, 1.590, -26.871)
+material_override = SubResource("cell_mat_32")
+script = ExtResource("2_mesh")
+rotation = Vector3(3.426, 2.132, 0)
+
+[node name="Cell33" type="MeshInstance3D" parent="SubViewport/Cells"]
+transform = Transform3D(0.728, 0, 0, 0, 0.728, 0, 0, 0, 0.728, 7.645, -1.133, -3.171)
+material_override = SubResource("cell_mat_33")
+script = ExtResource("2_mesh")
+rotation = Vector3(4.036, 2.321, 0)
+
+[node name="Cell34" type="MeshInstance3D" parent="SubViewport/Cells"]
+transform = Transform3D(1.404, 0, 0, 0, 1.404, 0, 0, 0, 1.404, 1.533, 6.401, 1.944)
+material_override = SubResource("cell_mat_34")
+script = ExtResource("2_mesh")
+rotation = Vector3(3.824, 2.206, 0)
+
+[node name="Cell35" type="MeshInstance3D" parent="SubViewport/Cells"]
+transform = Transform3D(1.402, 0, 0, 0, 1.402, 0, 0, 0, 1.402, -9.410, 0.921, -9.699)
+material_override = SubResource("cell_mat_35")
+script = ExtResource("2_mesh")
+rotation = Vector3(0.884, 3.955, 0)
+
+[node name="Cell36" type="MeshInstance3D" parent="SubViewport/Cells"]
+transform = Transform3D(1.465, 0, 0, 0, 1.465, 0, 0, 0, 1.465, -1.640, -3.831, -20.381)
+material_override = SubResource("cell_mat_36")
+script = ExtResource("2_mesh")
+rotation = Vector3(6.110, 2.386, 0)
+
+[node name="Cell37" type="MeshInstance3D" parent="SubViewport/Cells"]
+transform = Transform3D(0.887, 0, 0, 0, 0.887, 0, 0, 0, 0.887, 2.299, -3.362, 2.372)
+material_override = SubResource("cell_mat_37")
+script = ExtResource("2_mesh")
+rotation = Vector3(3.118, 2.611, 0)
