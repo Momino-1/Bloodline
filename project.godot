@@ -19,8 +19,9 @@ config/description="Educational 3D biology game: the journey of a red blood cell
 run/main_scene="res://scenes/main_menu/main_menu.tscn"
 config/features=PackedStringArray("4.7", "Forward Plus")
 boot_splash/bg_color=Color(1, 1, 1, 1)
-boot_splash/image="uid://r5y4a2binavb"
+boot_splash/image="uid://b05k6h76p8k2o"
 config/icon="uid://r5y4a2binavb"
+boot_splash/minimum_display_time=3000
 
 [autoload]
 

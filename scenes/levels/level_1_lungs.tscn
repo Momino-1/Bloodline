@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://bjjrut4jim72k" path="res://scripts/gameplay/level_1.gd" id="1_s"]
 [ext_resource type="Script" uid="uid://dpb5xehblo46d" path="res://scripts/gameplay/vessel_wall.gd" id="2_vessel"]
-[ext_resource type="PackedScene" path="res://scenes/player/rbc_player.tscn" id="3_player"]
+[ext_resource type="PackedScene" uid="uid://biio30r7wtjb3" path="res://scenes/player/rbc_player.tscn" id="3_player"]
 [ext_resource type="PackedScene" path="res://scenes/interactables/alveolus.tscn" id="4_alv"]
 [ext_resource type="PackedScene" path="res://scenes/interactables/capillary_patch.tscn" id="5_cap"]
-[ext_resource type="PackedScene" path="res://scenes/interactables/red_blood_cell.tscn" id="6_rbc"]
+[ext_resource type="PackedScene" uid="uid://b16sfxx61l26c" path="res://scenes/interactables/red_blood_cell.tscn" id="6_rbc"]
 
 [sub_resource type="Environment" id="env"]
 background_mode = 1
@@ -19,33 +19,6 @@ glow_intensity = 0.9
 fog_enabled = true
 fog_light_color = Color(0.32, 0.04, 0.08, 1)
 fog_density = 0.016
-
-[sub_resource type="FastNoiseLite" id="wall_noise"]
-
-[sub_resource type="NoiseTexture2D" id="wall_normal"]
-width = 500
-height = 500
-noise = SubResource("wall_noise")
-seamless = true
-as_normal_map = true
-seamless_blend_skirt = 0.481
-bump_strength = 100.0
-
-[sub_resource type="StandardMaterial3D" id="wall_mat"]
-cull_mode = 2
-vertex_color_use_as_albedo = true
-roughness = 0.44
-emission_enabled = true
-emission = Color(0.25, 0.02, 0.05, 1)
-emission_energy_multiplier = 0.5
-normal_enabled = true
-normal_scale = -0.89
-normal_texture = SubResource("wall_normal")
-rim_enabled = true
-rim = 0.67
-clearcoat_enabled = true
-clearcoat = 0.66
-clearcoat_roughness = 0.73
 
 [sub_resource type="BoxShape3D" id="blocker_shape"]
 size = Vector3(40, 40, 4)
@@ -117,7 +90,6 @@ omni_range = 30.0
 script = ExtResource("2_vessel")
 
 [node name="Mesh" type="MeshInstance3D" parent="VesselWall" unique_id=1739104061]
-material_override = SubResource("wall_mat")
 
 [node name="Shape" type="CollisionShape3D" parent="VesselWall" unique_id=45967737]
 
@@ -161,7 +133,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0523, 6.311, -40)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.3608, -3.9738, -75)
 
 [node name="Patch2" parent="CapillaryPatches" unique_id=1076536403 instance=ExtResource("5_cap")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8167, -4.7345, -108)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.0798674, -4.7345, -108)
 
 [node name="Cells" type="Node3D" parent="." unique_id=1830176811]
 

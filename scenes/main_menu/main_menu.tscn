@@ -24,9 +24,9 @@ layout_mode = 1
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1058082147]
 layout_mode = 0
 offset_left = 32.0
-offset_top = 118.00001
+offset_top = 98.00001
 offset_right = 1312.0
-offset_bottom = 283.0
+offset_bottom = 263.0
 scale = Vector2(0.4336741, 0.50890905)
 texture = ExtResource("4_wem23")
 
@@ -71,21 +71,24 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 48)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_3ovsr")
-text = "Biology Wiki"
+text = "Biology Wiki
+(working on it)"
 
 [node name="SettingsButton" type="Button" parent="Column" unique_id=172098150]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 48)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_3ovsr")
-text = "Settings"
+text = "Settings
+(just there)"
 
 [node name="ExitButton" type="Button" parent="Column" unique_id=2144785677]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 48)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_3ovsr")
-text = "Exit"
+text = "Exit
+(buggy dont use)"
 
 [node name="Encyclopedia" parent="." unique_id=155357677 instance=ExtResource("4_enc")]
 unique_name_in_owner = true
@@ -174,7 +177,7 @@ text = "Close"
 unique_name_in_owner = true
 oversampling_override = 1.0
 title = "New game"
-position = Vector2i(400, 400)
+position = Vector2i(400, 174)
 size = Vector2i(671, 100)
 dialog_text = "Starting a new game erases your saved progress and discoveries. Continue?"
 

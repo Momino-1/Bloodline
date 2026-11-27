@@ -25,7 +25,7 @@ static func build_tube(length: float, radius: float, rings := 100, segments := 4
 			var r := radius + n * 1.4 + f * 0.25
 			row_p.append(Vector3(cx * r, sy * r, z))
 			var t := clampf(0.5 + n * 0.9 + f * 0.4, 0.0, 1.0)
-			row_c.append(Color(0.30, 0.04, 0.08).lerp(Color(0.436, 0.105, 0.146, 1.0), t))
+			row_c.append(Color(0.343, 0.05, 0.096, 1.0).lerp(Color(0.218, 0.034, 0.057, 1.0), t))
 		pts.append(row_p)
 		cols.append(row_c)
 
@@ -57,7 +57,7 @@ static func wall_material() -> StandardMaterial3D:
 	m.rim = 0.35
 	m.rim_tint = 0.5
 	m.emission_enabled = true
-	m.emission = Color(0.25, 0.02, 0.05)
+	m.emission = Color(0.427, 0.058, 0.111, 1.0)
 	m.emission_energy_multiplier = 0.5
 	var nt := NoiseTexture2D.new()
 	var fn := FastNoiseLite.new()
@@ -65,10 +65,10 @@ static func wall_material() -> StandardMaterial3D:
 	nt.noise = fn
 	nt.as_normal_map = true
 	nt.seamless = true
-	nt.width = 500
-	nt.height = 500
-	nt.bump_strength = 100
+	nt.width = 623
+	nt.height = 424
+	nt.bump_strength = 6
 	m.normal_enabled = true
 	m.normal_texture = nt
-	m.normal_scale = 1
+	m.normal_scale = 4
 	return m

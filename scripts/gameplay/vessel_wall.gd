@@ -1,7 +1,7 @@
 @tool
 extends StaticBody3D
-## The blood vessel tube. Edit length / radius / seed in the Inspector and the tube rebuilds in the viewport.
-## Needs two children: a MeshInstance3D called "Mesh" and a CollisionShape3D called "Shape".
+## Blood vessel tube. Needs children: MeshInstance3D "Mesh" and CollisionShape3D "Shape".
+## Mesh, collision AND material are all rebuilt from here, so nothing can get lost.
 
 const VesselBuilder = preload("res://scripts/gameplay/vessel_builder.gd")
 
@@ -17,6 +17,16 @@ const VesselBuilder = preload("res://scripts/gameplay/vessel_builder.gd")
 	set(v):
 		noise_seed = v
 		_rebuild()
+@export_range(20, 300) var rings := 100:
+	set(v):
+		rings = v
+		_rebuild()
+@export_range(12, 120) var segments := 40:
+	set(v):
+		segments = v
+		_rebuild()
+
+static var _material: StandardMaterial3D
 
 
 func _ready() -> void:
@@ -30,8 +40,11 @@ func _rebuild() -> void:
 	var cs: CollisionShape3D = get_node_or_null("Shape")
 	if mi == null or cs == null:
 		return
-	var m := VesselBuilder.build_tube(length, radius, 100, 40, noise_seed)
+	var m := VesselBuilder.build_tube(length, radius, rings, segments, noise_seed)
 	mi.mesh = m
+	if _material == null:
+		_material = VesselBuilder.wall_material()
+	mi.material_override = _material
 	var shape := m.create_trimesh_shape()
 	shape.backface_collision = true
 	cs.shape = shape
@@ -40,8 +53,13 @@ func _rebuild() -> void:
 func _notification(what: int) -> void:
 	if not Engine.is_editor_hint():
 		return
+	var mi: MeshInstance3D = get_node_or_null("Mesh")
+	var cs: CollisionShape3D = get_node_or_null("Shape")
 	if what == NOTIFICATION_EDITOR_PRE_SAVE:
-		($Mesh as MeshInstance3D).mesh = null
-		($Shape as CollisionShape3D).shape = null
+		if mi:
+			mi.mesh = null
+			mi.material_override = null
+		if cs:
+			cs.shape = null
 	elif what == NOTIFICATION_EDITOR_POST_SAVE:
 		_rebuild()
